@@ -1,0 +1,78 @@
+@use "../../sass/color" as colr;
+
+.header {
+    padding: 2rem;
+    border-bottom: 1px solid lighten(colr.$primary-black, 70);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-navs--list {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    font-size: 1.6rem;
+
+    &>li {
+        display: flex;
+    }
+
+    &>li>a {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: 1rem 2rem;
+
+        &:hover,
+        &.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+
+    }
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-nav--toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: colr.$primary-black;
+    border-radius: 100%;
+    color: #fff;
+    border: 2px solid transparent;
+
+
+
+    &:active {
+        transition: background-color, border-color 200ms ease-in;
+        background-color: colr.$primary-red;
+        border-color: colr.$primary-black;
+    }
+
+    &.show-on-mobile {
+        display: none;
+
+        @media(max-width: 767px) {
+            display: block;
+        }
+    }
+}
