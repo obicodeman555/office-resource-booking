@@ -1,9 +1,18 @@
+import Header from "./components/header/Header";
+import BookablesPage from "./pages/bookables/BookablesPage";
+import BookingsPage from "./pages/bookings/BookingsPage";
+import UsersPage from "./pages/users/UsersPage";
+import { Routes, Route } from "react-router-dom"
+
 function App() {
   return (
     <div className="App">
-      <h1>App Reset for content development
-
-      </h1>
+      <Header />
+      <Routes>
+        <Route path="/bookings" element={<BookingsPage />} />
+        <Route path="/bookables" element={<BookablesPage />} />
+        <Route path="/users" element={<UsersPage />} />
+      </Routes>
     </div>
   );
 }
