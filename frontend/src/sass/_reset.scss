@@ -1,4 +1,5 @@
 @use "./color" as colr;
+@use "./helpers";
 
 *,
 *::before,
@@ -8,10 +9,28 @@
     padding: 0;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 html,
 body,
 #root {
     height: 100%;
     font-family: 'Manrope', sans-serif;
     color: colr.$primary-black;
+}
+
+ol li,
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
 }
